@@ -1,0 +1,24 @@
+<%= render "shared/navbar" %>
+
+<section class="top-section">
+    <div class="top-content">
+        <h2>Potepan Shareで</br>まだ体験したことのない</br>旅をしよう</h2>
+    </div>
+    <div class="top-form">
+    <%= form_with url: search_path, local: true, method: :get do |f|%>
+    <%= f.text_field :address %>
+    <%= f.submit "検索"%>
+    <% end %>
+    </div>
+</section>
+<section class="area-section">
+    <h2>おすすめエリア</h2>
+    <div class="area">
+        <%= link_to "東京", pages_tokyo_path, class:"area_tokyo"%>
+        <%= link_to "京都", pages_kyoto_path, class:"area_kyoto" %>
+        <%= link_to "大阪", pages_osaka_path, class:"area_osaka" %>
+        <%= link_to "札幌", pages_sapporo_path, class:"area_sapporo" %>
+    </div>
+</section>
+
+<%= render "shared/footer"%>

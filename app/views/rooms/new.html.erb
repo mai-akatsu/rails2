@@ -1,0 +1,35 @@
+<%= render  "shared/navbar" %>
+
+<%= form_for @room do |f| %>
+<table class="new-table">
+    <tr>
+        <th><%= f.label :title ,"施設名" %></th>
+        <td><%= f.text_field :title %></td>
+    <tr>
+        <th><%= f.label :content ,"施設詳細" %></th>
+        <td><%= f.text_field :content %></td>
+    </tr>
+    <tr>
+        <th><%= f.label :fee ,"料金" %></th>
+        <td><%= f.number_field :fee %></td>
+    </tr>
+    <tr class="checkbox">
+        <th><%= f.label :address,"住所" %></th>
+        <td><%= f.text_field :address %></td>
+        <td>
+        </td>
+    </tr>
+    <tr>
+        <th><%= f.label :image ,"施設画像" %></th>
+        <td><%= f.file_field :image %></td>
+    </tr>
+</table>
+   
+   <div>
+       <ul>
+           <li><%= link_to "キャンセル", :rooms %></li>
+           <li><%= f.submit "保存" %></li>
+       </ul>
+   </div>
+<% end %>
+<%= render "shared/footer"%>
