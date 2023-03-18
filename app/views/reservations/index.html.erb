@@ -5,7 +5,7 @@
 <% @reservations.each do |reservation| %>
  <table class="show-table">
 　 </tr>
-     <th>画像</th>
+     <th>施設画像</th>
       <% if reservation.room.image?%>
       <td><%= image_tag reservation.room.image.to_s %></td>
       <% else %>

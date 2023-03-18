@@ -1,5 +1,5 @@
 <%= render "shared/navbar" %>
-<h1>アカウント</h1>
+ <h1>プロフィール</h1>
  <table class="show-table">
    <tr>
      <th>アイコン画像</th>
@@ -10,7 +10,7 @@
      <td><%= @user.name %></td>
    </tr>
    <tr>
-     <th>プロフィール</th>
+     <th>自己紹介</th>
      <td><%= @user.profile %></td>
    </tr>
    <%= link_to "編集", edit_user_path(@user) %>
