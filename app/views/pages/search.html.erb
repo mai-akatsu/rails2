@@ -1,0 +1,34 @@
+<%= render "shared/navbar" %>
+<%= render "shared/area"%>
+<div class="count">
+    <p><%= @rooms.count %>件が見つかりました</p>
+</div>
+<% @rooms.each do |room| %>
+
+ <table class="show-table">
+   <tr>
+     <th>施設名</th>
+     <td><%= room.title %></td>
+   </tr>
+   <tr>
+     <th>住所</th>
+     <td><%= room.address %></td>
+   </tr>
+   <tr>
+     <th>施設詳細</th>
+     <td><%= room.content %></td>
+   </tr>
+   <tr>
+     <th>料金</th>
+     <td><%= room.fee %></td>
+   </tr>
+     <th>画像</th>
+     <td><%= image_tag room.image.to_s %></td>
+   </tr>
+    <tr>
+     <th></th>
+     <td><%=link_to "詳細はこちら", room_path(room.id) %></td>
+   <tr>
+ </table>
+<% end %>
+<%= render "shared/footer"%>

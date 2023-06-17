@@ -1,0 +1,19 @@
+<%= render "shared/navbar" %>
+ <h1>プロフィール</h1>
+ <table class="show-table">
+   <tr>
+     <th>アイコン画像</th>
+     <td><%= image_tag @user.avator.to_s, style: "border-radius: 50%; width: 70px; height: 70px; object-fit:cover;"%></td>
+   </tr>
+   <tr>
+     <th>名前</th>
+     <td><%= @user.name %></td>
+   </tr>
+   <tr>
+     <th>自己紹介</th>
+     <td><%= @user.profile %></td>
+   </tr>
+   <%= link_to "編集", edit_user_path(@user) %>
+   <%= link_to "アカウント", users_account_path %>
+ </table>
+ <%= render "shared/footer"%>

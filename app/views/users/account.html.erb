@@ -1,0 +1,16 @@
+<%= render "shared/navbar" %>
+<h1>アカウント</h1>
+ <table class="show-table">
+   <tr>
+     <th>メールアドレス</th>
+     <td><%= @user.email %></td>
+   </tr>
+   <tr>
+     <th>パスワード</th>
+     <td>*********</td>
+   </tr>
+   <%= link_to "編集", edit_user_registration_path %>
+   <%= link_to "プロフィール", users_profile_path %>
+
+ </table>
+ <%= render "shared/footer"%>

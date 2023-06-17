@@ -1,0 +1,37 @@
+<% if user_signed_in? %> 
+<header class="nav-bar">
+  <div class="left-header">
+    <p><%= link_to "Potepan Share", root_path , class: "left-header_url"%></p>
+  </div>
+  <div class="right-header">
+    <div class="header-icon">
+      <% if current_user.avator?%>
+      <p><%= image_tag current_user.avator.to_s, style: "border-radius: 50%; width: 70px; height: 70px; object-fit:cover;" %></p>
+      <% else %>
+      <p><%= image_tag 'default-avator.png', style: "border-radius: 50%; width: 70px; height: 70px; object-fit:cover;"  %></p>
+      <%end%>
+    </div>
+    <div class="nav-content">
+      <label for="toggle" onclick=""  for="menuToggle"><%= current_user.name%></label>  
+      <input type="checkbox" id="toggle" autocomplete="off">
+      <ul id="menu">
+      <li class="dropdown__list"><%= link_to "施設の新規登録", new_room_path, class: "dropdown__list__url"%></li>
+      <li class="dropdown__list"><%= link_to "予約済み一覧", reservations_path , class: "dropdown__list__url"%></li>
+      <li class="dropdown__list"><%= link_to "登録済み一覧", rooms_own_path , class: "dropdown__list__url"%></li>
+      <li class="dropdown__list"><%= link_to "アカウント設定", users_account_path , class: "dropdown__list__url"%> </li>
+      <li class="dropdown__list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "dropdown__list__url"%></li>
+      </ul>
+    </div>
+  </div>
+</header>
+<% else %>
+<header class="nav-bar">
+  <div class="left-header">
+    <p><%= link_to "Potepan Share", root_path , class: "left-header_url"%></p>
+  </div>
+  <div class="right-nonlogin-header">
+  <p class="login"><%= link_to "ログイン", new_user_session_path , class: "login_url"%> </p>
+  <p class="register"><%= link_to "新規登録", new_user_registration_path , class: "sign_in_url"%> </p>
+  </div>
+</header>
+<% end %>
